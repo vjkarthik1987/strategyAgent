@@ -1,6 +1,4 @@
 const authenticateCompanySession = (req, res, next) => {
-    console.log("Session companyID:", req.session.companyID);
-    console.log("Requested companyID:", req.params.companyID);
 
     if (!req.session.companyID) {
         return res.status(403).json({ error: 'Unauthorized: Please log in as a company' });

@@ -57,14 +57,19 @@ passport.deserializeUser(User.deserializeUser());
 const indexRouter = require('./routes/index');
 const companyRoutes = require('./routes/companyRoutes');
 const userRoutes = require('./routes/userRoutes');
+const objectiveRoutes = require('./routes/objectiveRoutes'); // ✅ Updated
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
+
+
 
 app.use('/api', indexRouter);
 app.use('/api', companyRoutes);
 app.use('/api', userRoutes);
+app.use('/api', objectiveRoutes);
+
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
 
 // ✅ Global Error Handling Middleware
 app.use((err, req, res, next) => {

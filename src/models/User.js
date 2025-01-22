@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
-const teams = require('./teams.js'); // Temporary L1 & L2 team storage
+const teams = require('../data/teams.js'); // Temporary L1 & L2 team storage
 
 const UserSchema = new mongoose.Schema({
     name: { 
